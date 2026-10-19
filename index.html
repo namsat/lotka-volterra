@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Il modello preda-predatore – analisi e applicazioni</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Il modello preda-predatore di Lotka-Volterra dalle basi: equazioni differenziali, spazio delle fasi, linearizzazione, funzione di Lyapunov e generalizzazione a n specie, con simulazioni interattive.">
+<meta name="author" content="Satnam Singh">
+<link rel="canonical" href="https://namsat.github.io/lotka-volterra/">
+<meta property="og:title" content="Il modello preda-predatore – analisi e applicazioni">
+<meta property="og:description" content="Il modello preda-predatore di Lotka-Volterra dalle basi: equazioni differenziali, spazio delle fasi, linearizzazione, funzione di Lyapunov e generalizzazione a n specie, con simulazioni interattive.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://namsat.github.io/lotka-volterra/">
+<meta property="og:site_name" content="Il modello preda-predatore">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://namsat.github.io/lotka-volterra/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "headline": "Il modello preda-predatore – analisi e applicazioni", "name": "Il modello preda-predatore – analisi e applicazioni", "inLanguage": "it", "author": {"@type": "Person", "name": "Satnam Singh"}, "url": "https://namsat.github.io/lotka-volterra/", "image": "https://namsat.github.io/lotka-volterra/assets/og.png", "about": ["Lotka-Volterra", "sistemi dinamici", "equazioni differenziali"], "educationalLevel": "Università"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Il modello preda-predatore", "item": "https://namsat.github.io/lotka-volterra/"}]}</script>
+<script>try{var t=localStorage.getItem('lv-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="assets/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<header class="top">
+  <button class="icon-btn menu-btn" id="menu-btn" aria-label="Apri indice" aria-controls="side-nav" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14"/></svg></button>
+  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 15c3-9 7-11 9-6s6 4 9-4" fill="none" stroke="#fbfcfd" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="13.5" r="2.2" fill="#fbfcfd"/></svg></span><span class="brand-t">Il modello preda-predatore</span></a>
+  <div class="top-r" style="margin-left:auto">
+    <a class="en-btn" id="en-btn" href="#" hidden translate="no" lang="en" title="Read in English (Google Translate)">EN</a>
+    <button class="icon-btn" id="theme-btn" aria-label="Cambia tema"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="4"/><path d="M10 1.5v2M10 16.5v2M1.5 10h2M16.5 10h2M4 4l1.4 1.4M14.6 14.6 16 16M4 16l1.4-1.4M14.6 5.4 16 4"/></svg></button>
+    <a class="port" href="/">← Portfolio</a>
+  </div>
+</header>
+<div class="layout">
+  <nav class="side-nav" id="side-nav" aria-label="Indice">
+    <h2>Indice</h2>
+    <ol>
+<li><a href="index.html" class="cur" aria-current="page"><span class="n">1</span><span>Introduzione</span></a>
+<ol>
+<li><a href="#contesto"><span class="n">1.1</span>Contesto</a></li>
+<li><a href="#percorso"><span class="n">1.2</span>Scopo e struttura</a></li>
+<li><a href="#bibliografia">Bibliografia</a></li>
+</ol>
+</li>
+<li><a href="capitolo-2.html"><span class="n">2</span><span>Sistemi di equazioni differenziali</span></a>
+</li>
+<li><a href="capitolo-3.html"><span class="n">3</span><span>Sistemi autonomi lineari e linearizzazione</span></a>
+</li>
+<li><a href="capitolo-4.html"><span class="n">4</span><span>Il modello di Lotka-Volterra</span></a>
+</li>
+<li><a href="capitolo-5.html"><span class="n">5</span><span>Varianti del modello</span></a>
+</li>
+</ol>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main class="content" id="main">
+<section class="hero">
+  <div>
+    <p class="eyebrow">Sistemi dinamici · ecologia matematica</p>
+    <h1>Il modello <span class="c2">preda-predatore</span></h1>
+    <p class="lede">Analisi e applicazioni: dalle fondamenta dei sistemi di equazioni differenziali al modello di Lotka-Volterra e alla sua generalizzazione a <span class="math inline notranslate" translate="no"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span> specie, con simulazioni interattive in 2D e 3D.</p>
+    <div class="cta"><a class="btn btn-p" href="capitolo-2.html">Inizia dal capitolo 2</a><a class="btn" href="capitolo-4.html">Vai a Lotka-Volterra</a></div>
+  </div>
+  <figure class="hero-fig">
+    <canvas id="hero-cv" width="640" height="440" aria-label="Animazione di un'orbita di Lotka-Volterra nel piano delle fasi"></canvas>
+    <figcaption><span class="legend"><span><i style="background:var(--sp1)"></i>prede <span class="math inline notranslate" translate="no"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span></span></span><span><i style="background:var(--sp2)"></i>predatori <span class="math inline notranslate" translate="no"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span></span></span></span></span></span></span><span>Orbite chiuse del modello di Lotka-Volterra.</span></figcaption>
+  </figure>
+</section>
+
+<article class="prose">
+<h2 id="contesto"><span class="hn">1.1</span> Contesto</h2>
+<p>Storicamente, le equazioni differenziali sono state introdotte con l'intento di descrivere il moto dei corpi celesti; tuttavia, la loro versatilità nel modellizzare un ampio spettro di processi è stata subito evidente. Ancora oggi costituiscono lo strumento prediletto per descrivere l'evoluzione di un qualsiasi sistema mutevole nel tempo. Ciononostante l'approccio analitico presenta una criticità fondamentale: la determinazione di soluzioni in forma chiusa risulta spesso difficoltosa, se non impossibile.</p>
+<p>In questo contesto, il contributo di Henri Poincaré ha segnato un punto di svolta: invece di cercare soluzioni esatte, egli ha trasferito l'indagine su un piano puramente geometrico. Grazie a questo cambio di paradigma, il focus si è spostato dall'integrazione analitica allo studio qualitativo e globale nello spazio delle fasi. Tale approccio permette di dedurre informazioni cruciali come la stabilità dei punti di equilibrio, il comportamento asintotico delle traiettorie e l'insorgenza di cicli in sistemi non lineari, aggirando l'impossibilità di ottenerne un'espressione analitica esatta.</p>
+<p>Il fascino e la potenza dei sistemi di equazioni differenziali risiedono dunque nella loro straordinaria universalità: la stessa struttura matematica è infatti in grado di descrivere realtà e fenomeni apparentemente distanti. Un caso ben noto è il sistema preda-predatore formulato in modo indipendente da Alfred J. Lotka e Vito Volterra durante gli anni Venti del secolo scorso. Questo modello si pone come obiettivo di spiegare le fluttuazioni periodiche tra prede e predatori in un ecosistema e ha conosciuto numerose varianti e applicazioni nel corso della storia.</p>
+
+<h2 id="percorso"><span class="hn">1.2</span> Scopo e struttura</h2>
+<p>Lo scopo di questo lavoro è tracciare un percorso logico-deduttivo che parta dalle fondamenta astratte della teoria dei sistemi dinamici, per restringersi successivamente al caso bidimensionale fino a giungere a un'applicazione pratica in ambito biologico e alla sua generalizzazione. Ogni capitolo contiene simulazioni interattive inserite nel punto in cui il concetto viene introdotto.</p>
+</article>
+
+<ol class="chap-cards">
+  <li><a href="capitolo-2.html"><span class="card-n">Capitolo 2</span><span class="card-t">Sistemi di equazioni differenziali</span><span class="card-d">Problema di Cauchy, buona positura secondo Hadamard, teorema di Cauchy-Lipschitz, sistemi autonomi, spazio degli stati e traiettorie, stabilità.</span><span class="card-l">Laboratori: pendolo nello spazio delle fasi · tipi di traiettorie · dipendenza continua dai dati iniziali</span></a></li>
+  <li><a href="capitolo-3.html"><span class="card-n">Capitolo 3</span><span class="card-t">Sistemi autonomi lineari e linearizzazione</span><span class="card-d">Diagonalizzazione e modi di propagazione, forma di Jordan, linearizzazione, stabilità secondo Lyapunov, classificazione dei punti di equilibrio nel piano.</span><span class="card-l">Laboratori: classificazione interattiva (Figura 3.1) · lente di linearizzazione</span></a></li>
+  <li><a href="capitolo-4.html"><span class="card-n">Capitolo 4</span><span class="card-t">Il modello di Lotka-Volterra</span><span class="card-d">Formulazione e ipotesi, punti di equilibrio, integrale primo e funzione di Lyapunov, orbite chiuse, criticità e analisi al variare di <span class="math inline notranslate" translate="no"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span></span></span></span></span>.</span><span class="card-l">Laboratori: superficie di Lyapunov 3D · piano delle fasi e serie temporali · crollo delle popolazioni</span></a></li>
+  <li><a href="capitolo-5.html"><span class="card-n">Capitolo 5</span><span class="card-t">Varianti del modello</span><span class="card-d">Crescita limitata (coesistenza ed estinzione dei predatori), modello generalizzato a <span class="math inline notranslate" translate="no"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span> specie e grafi di interazione, due prede e un predatore.</span><span class="card-l">Laboratori: crescita limitata · reti di interazione · dinamica a tre specie in 3D</span></a></li>
+</ol>
+
+<article class="prose">
+<h2 id="bibliografia">Bibliografia</h2>
+<ol class="biblio">
+  <li>Marco Morandotti. <em>Appunti di Analisi Matematica 2</em>. Dispense del corso di Analisi Matematica 2, Politecnico di Torino, 2025.</li>
+  <li>Morris W. Hirsch, Stephen Smale e Robert L. Devaney. <em>Differential Equations, Dynamical Systems, and an Introduction to Chaos</em>. Academic Press (Elsevier), 2013.</li>
+  <li>Y. Takeuchi. <em>Global Dynamical Properties of Lotka-Volterra Systems</em>. World Scientific, 1996.</li>
+  <li>Thomas M. Smith e Robert Leo Smith. <em>Elements of Ecology</em>, 8ª ed. Benjamin Cummings, 2012.</li>
+  <li>Lawrence Perko. <em>Differential Equations and Dynamical Systems</em>, 3ª ed. Texts in Applied Mathematics 7, Springer, 2000.</li>
+  <li>Dario Daghero. <em>Bridging the Gap: Between Classical and Modern Physics</em>. CLUT Editrice, 2025.</li>
+</ol>
+</article>
+
+    <nav class="pn-row" aria-label="Capitoli"><span></span><a class="pn next" href="capitolo-2.html" rel="next"><span class="pn-l">Successivo →</span><span class="pn-t">2 · Sistemi di equazioni differenziali</span></a></nav>
+    <footer class="foot">
+      <p>© 2026 Satnam Singh · Simulazioni numeriche con Runge-Kutta del quarto ordine (per i modelli di popolazione in coordinate logaritmiche, così le densità restano positive).</p>
+      <p>Altri progetti: <a href="https://namsat.github.io/fisica1/">Dispense di Fisica I</a> · <a href="/">Portfolio</a></p>
+    </footer>
+  </main>
+</div>
+<script src="assets/lv.js"></script>
+</body>
+</html>
