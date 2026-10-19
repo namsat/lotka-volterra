@@ -26,6 +26,46 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <link rel="stylesheet" href="assets/katex.min.css">
 <link rel="stylesheet" href="assets/style.css">
+<!-- analytics:start -->
+<!-- Google tag (gtag.js) + consenso -->
+<script>
+(function(){
+  if(!/(^|\.)namsat\.github\.io$/.test(location.hostname))return;
+  var ID='G-EHDDLEJ30T',K='ss-consent',w=window,d=document;
+  w.dataLayer=w.dataLayer||[];function gtag(){dataLayer.push(arguments)}w.gtag=gtag;
+  var c=null;try{c=localStorage.getItem(K)}catch(e){}
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:c==='y'?'granted':'denied'});
+  gtag('js',new Date());gtag('config',ID);
+  var it=(d.documentElement.lang||'').slice(0,2)==='it';
+  var T=it?{m:'Uso Google Analytics per contare le visite in forma aggregata. Niente pubblicità, niente profilazione.',y:'Accetta',n:'Rifiuta',p:'Preferenze cookie'}
+          :{m:'I use Google Analytics to count visits in aggregate. No ads, no profiling.',y:'Accept',n:'Decline',p:'Cookie preferences'};
+  function set(v){try{localStorage.setItem(K,v)}catch(e){}gtag('consent','update',{analytics_storage:v==='y'?'granted':'denied'});var b=d.getElementById('ss-cb');if(b)b.remove()}
+  function show(){
+    if(d.getElementById('ss-cb'))return;
+    var b=d.createElement('div');b.id='ss-cb';b.setAttribute('role','dialog');b.setAttribute('aria-label',T.p);b.className='notranslate';
+    b.innerHTML='<p>'+T.m+'</p><div><button type="button" data-v="n">'+T.n+'</button><button type="button" data-v="y">'+T.y+'</button></div>';
+    b.addEventListener('click',function(e){var v=e.target.getAttribute&&e.target.getAttribute('data-v');if(v)set(v)});
+    d.body.appendChild(b);
+  }
+  w.ssConsent=show;
+  var css='#ss-cb{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:34rem;margin:0 auto;display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;justify-content:space-between;padding:.75rem .9rem;border-radius:10px;font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;background:#fff;color:#1d1d1f;border:1px solid rgba(0,0,0,.14);box-shadow:0 8px 28px rgba(0,0,0,.16)}'
+   +'#ss-cb p{margin:0;flex:1 1 16rem}#ss-cb div{display:flex;gap:.5rem}'
+   +'#ss-cb button{font:inherit;cursor:pointer;padding:.4rem .9rem;border-radius:7px;border:1px solid currentColor;background:transparent;color:inherit}'
+   +'#ss-cb button[data-v=y]{background:#1d1d1f;color:#fff;border-color:#1d1d1f}'
+   +'@media (prefers-color-scheme:dark){:root:not([data-theme=light]) #ss-cb{background:#1f2023;color:#ececec;border-color:rgba(255,255,255,.16)}:root:not([data-theme=light]) #ss-cb button[data-v=y]{background:#ececec;color:#1f2023;border-color:#ececec}}'
+   +':root[data-theme=dark] #ss-cb{background:#1f2023;color:#ececec;border-color:rgba(255,255,255,.16)}:root[data-theme=dark] #ss-cb button[data-v=y]{background:#ececec;color:#1f2023;border-color:#ececec}'
+   +'.ss-cl{font:inherit;color:inherit;opacity:.75;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline}';
+  var st=d.createElement('style');st.textContent=css;d.head.appendChild(st);
+  function ready(){
+    var f=d.querySelectorAll('footer');f=f[f.length-1];
+    if(f){var l=d.createElement('button');l.type='button';l.className='ss-cl';l.textContent=T.p;l.onclick=show;var p=d.createElement('p');p.appendChild(l);f.appendChild(p)}
+    if(c!=='y'&&c!=='n')show();
+  }
+  if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',ready);else ready();
+})();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHDDLEJ30T"></script>
+<!-- analytics:end -->
 </head>
 <body>
 <a class="skip" href="#main">Vai al contenuto</a>
